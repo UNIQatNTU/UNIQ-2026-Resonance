@@ -1,1 +1,41 @@
+# Basic Site Settings
+title: "My Awesome Conference"
+description: "A gathering for developers and enthusiasts."
+baseurl: "" # the subpath of your site, e.g. "/conference"
+url: "https://example.com"
+
+# Theme Activation
 theme: jekyll-theme-conference
+
+# Theme-Specific Configuration
+conference:
+  show_errors: true           # Set to false in production to hide the debug info bar
+  live: true                  # Toggle to show "live" indicators for ongoing sessions
+  
+  # Navigation Bar links
+  navigation:
+    - name: Home
+      relative_url: /
+    - name: Schedule
+      relative_url: /schedule/
+    - name: Speakers
+      relative_url: /speakers/
+    - name: Location
+      relative_url: /location/
+
+# Required Collections (must be defined for the theme to function)
+collections:
+  talks:
+    output: true
+    permalink: /talks/:path/
+  speakers:
+    output: true
+    permalink: /speakers/:path/
+  rooms:
+    output: true
+    permalink: /rooms/:path/
+
+# Plugins
+plugins:
+  - jekyll-theme-conference
+
